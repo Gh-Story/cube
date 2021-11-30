@@ -19,9 +19,9 @@ from .views import *
 
 urlpatterns = [
     # url(r'^admin/$', admin.site.urls),
-    url(r'^index/$', index),
-    url(r'^index/initState/$', initState),
-    url(r'^index/solve/$', solve),
+    url(r'^$', index),
+    url(r'^initState/$', initState),
+    url(r'^solve/$', solve),
     url(r'^indexPlus/solvePlus/$', solve_plus),
     url(r'^indexPlus/$', index_plus),
     url(r'^indexPlus/initState/$', initState),
