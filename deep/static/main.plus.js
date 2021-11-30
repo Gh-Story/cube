@@ -15,8 +15,60 @@ var faceNames = ["top", "bottom", "left", "right", "back", "front"];
 var colorMap = {0: "#ffffff", 1: "#ffff1a", 4: "#0000ff", 5: "#33cc33", 2: "#ff8000",3: "#e60000"};
 var lastMouseX = 0, lastMouseY = 0;
 var rotX = -30, rotY = -30;
-
+var count = 0;
 var moves = [];
+
+
+/*
+$(document).ready(function (){
+
+
+});
+*/
+
+window.onload = function() {
+  //点击开始建 开始计数
+  //var count = 0
+  var timer = null //timer变量记录定时器setInterval的返回值
+  document.getElementById("btnstart").onclick = function() {
+      timer = setInterval(function() {
+          count++;
+          console.log(count)
+              // 需要改变页面上时分秒的值
+          console.log(document.getElementById("id_S"))
+          document.getElementById("id_S").innerHTML = showNum(count % 60)
+          document.getElementById("id_M").innerHTML = showNum(parseInt(count / 60) % 60)
+          document.getElementById("id_H").innerHTML = showNum(parseInt(count / 60 / 60))
+      }, 1000)
+  }
+  document.getElementById("btnpause").onclick = function() {
+          //取消定时器
+          clearInterval(timer)
+      }
+      //停止记数  数据清零  页面展示数据清零
+      document.getElementById("btnstop").onclick = function() {
+      //取消定时器
+      document.getElementById("btnpause").onclick()
+          // clearInterval(timer)
+          //数据清零  总秒数清零
+      count = 0
+          //页面展示数据清零
+          document.getElementById("id_S").innerHTML = "00"
+          document.getElementById("id_M").innerHTML = "00"
+          document.getElementById("id_H").innerHTML = "00"
+  }
+
+  //封装一个处理单位数字的函数
+  function showNum(num) {
+      if (num < 10) {
+          return '0' + num
+      }
+      return num
+  }
+}
+
+
+
 
 function reOrderArray(arr,indecies) {
 	var temp = [];
@@ -63,6 +115,7 @@ function translateColors(color) {
 	}
 }
 
+
 function setStickerColors(newState) {
 	state = newState;
 	clearCube();
@@ -77,6 +130,8 @@ function setStickerColors(newState) {
 			idx = idx + 1;
 		}
 	}
+
+
 
 	// 魔方编码方式
 	//
@@ -161,6 +216,42 @@ function setStickerColors(newState) {
 	document.getElementById("stickers_16").style.backgroundColor = translateColors(stickers[52].style.backgroundColor);
 	document.getElementById("stickers_17").style.backgroundColor = translateColors(stickers[53].style.backgroundColor);
 }
+var saveStatexxx = [];
+var indexNewBotton = '10000';
+function addButtonTimeStateShow(newBottonId){
+  setStickerColors(saveStatexxx[newBottonId-10000]);
+}
+function addButtonTimeState(){
+  console.log(document.getElementById("id_H").innerHTML,document.getElementById("id_M").innerHTML,document.getElementById("id_S").innerHTML);
+  
+  
+  saveStatexxx[Number(indexNewBotton)-10000] = state;
+  var o=document.createElement("input"); 
+  o.id=indexNewBotton;
+
+  o.type = "button" ; 
+
+  o.value = document.getElementById("id_M").innerHTML + "m" + document.getElementById("id_S").innerHTML +"s";
+  document.getElementById('saveStatesolution_container').appendChild(o);
+  
+  // o.addEventListener("click",addButtonTimeStateShow(Number(document.getElementById(indexNewBotton).id)));
+  // o.addEventListener("click",newindex());
+  o.onclick=function(){
+    var val=$(this).attr("id");
+    alert(val);
+    addButtonTimeStateShow(val);
+  };
+
+  
+  o = null;//及时解除不再使用的变量引用,即将其赋值为 null;  
+  indexNewBotton++;
+  
+  
+}
+  // function newindex(){
+  //   a = Number(document.getElementById(indexNewBotton).id);
+  //   alert(a);
+  // }
 
 function buttonPressed(ev) {
 	var face = ''
@@ -748,6 +839,11 @@ function colorSet(ele){
 		setStickerColors(state);
 	}
 }
+
+
+
+ 
+
 
 //增加单个转动按钮
 function singleRotation(id){
@@ -2923,3 +3019,5 @@ function convert_time(n) {
     return(h  + ':' + m + ':' + s  + '.' + ms);
   }
 }
+
+ 

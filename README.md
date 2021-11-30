@@ -1,8 +1,6 @@
-# 魔方项目
+# 魔方项目说明
 
 Refer to https://gitee.com/nwu_hq/cube
-
-[![Build Status](https://app.travis-ci.com/cs-loafers/cube.svg?branch=main)](https://app.travis-ci.com/cs-loafers/cube)
 
 ## 1. 项目环境
 
@@ -17,13 +15,19 @@ Refer to https://gitee.com/nwu_hq/cube
 
 ### 1.项目准备
 
-本项目已经基于*Django*框架创建了基本的文件。在项目的根目录下有一个requirement.txt文件，里面保存了项目所需要的运行依赖库。使用以下命令完整依赖的导入。
+本项目已经基于*Django*框架创建了基本的文件。在项目的根目录下有一个requirements.txt文件，里面保存了项目所需要的运行依赖库。使用以下命令完整依赖的导入。
 
 ```bash
-cube$ pip install -r requirement.txt
+cube$ pip install -r requirements.txt
+cube$ sudo apt-get install python-tk
 ```
 
-此过程需要较长时间，建议使用阿里云镜像库加快下载速度。
+此过程需要较长时间，建议使用tsinghua镜像库加快下载速度。
+
+conda镜像文件见根目录下/.condarc文件
+
+ubuntu使用命令 gedit/vim ~/.condarc 编辑镜像即可,或者直接复制粘贴也可
+
 
 ### 2. 项目运行
 
