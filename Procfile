@@ -1,1 +1,1 @@
-web: gunicorn deep/cube-test-gaojiruangong.wsgi
+web: gunicorn deep.wsgi
