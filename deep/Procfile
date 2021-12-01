@@ -1,1 +1,1 @@
-web: gunicorn deep.wsgi
+web: gunicorn cube.wsgi
