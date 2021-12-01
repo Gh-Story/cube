@@ -35,7 +35,7 @@ socketName = ''
 
 def dataListener(dataQueue, resQueue, gpuNum=None):
     # Environment = env_utils.getEnvironment('cube3')
-    nnet = nnet_utils.loadNnet(os.path.abspath('..')+'/cube/code/savedModels/cube3/1', 'model.meta"', True, Environment, gpuNum=gpuNum)
+    nnet = nnet_utils.loadNnet(o_path+'/code/savedModels/cube3/1', 'model.meta"', True, Environment, gpuNum=gpuNum)
     while True:
         data = dataQueue.get()
         nnetResult = nnet(data)
