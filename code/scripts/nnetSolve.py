@@ -13,16 +13,16 @@ sys.path.append('../')
 sys.path.append('../code')
 sys.path.append('../data')
 sys.path.append('./solvers/cube3/')
-tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/environments/'
-sys.path.append(tmpp)
+#tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/environments/'
+sys.path.append('/cube/code/environments/')
 print(sys.path)
 import env_utils
 import socket
 import gc
 # from solver_algs import Kociemba
 # from solver_algs import Optimal
-tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/ml_utils/'
-sys.path.append(tmpp)
+#tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/ml_utils/'
+sys.path.append('/cube/code/ml_utils/')
 import nnet_utils
 import search_utils
 
@@ -110,8 +110,8 @@ def solve(state):
     global socketName
     sys.path.append('./')
     sys.path.append('./solvers/cube3/') 
-    tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/solvers/cube3/'
-    sys.path.append(tmpp)
+    #tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/solvers/cube3/'
+    sys.path.append('/cube/code/solvers/cube3/')
     useGPU = True
     if len(os.environ['CUDA_VISIBLE_DEVICES']) > 1:
         gpuNums = [int(x) for x in os.environ['CUDA_VISIBLE_DEVICES'].split(",")]

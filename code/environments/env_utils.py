@@ -10,9 +10,9 @@ sys.path.append('../')
 sys.path.append('../code')
 sys.path.append('../data')
 sys.path.append('./solvers/cube3/')
-tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/environments/'
-sys.path.append(tmpp)
-print(tmpp)
+#tmpp = os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/environments/'
+sys.path.append('/cube/code/environments/')
+#print(tmpp)
 import cube_interactive_simple
 def getEnvironment(envName):
     envName = envName.lower()
