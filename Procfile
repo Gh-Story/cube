@@ -1,1 +1,1 @@
-web: gunicorn cube.wsgi
+web: python deep/manage.py runserver 0.0.0.0:8000
