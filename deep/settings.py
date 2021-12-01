@@ -124,4 +124,4 @@ HERE = os.path.join(HERE, '../')
 STATICFILES_DIRS = (
     os.path.join(HERE, 'static/'),
 )
-
+STATIC_ROOT = (HERE,'static/)
