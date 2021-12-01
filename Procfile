@@ -1,1 +1,1 @@
-web: python deep/manage.py runserver 0.0.0.0:8000
+web: python deep/manage.py runserver 0.0.0.0:5000
