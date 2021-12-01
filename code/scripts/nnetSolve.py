@@ -13,14 +13,14 @@ sys.path.append('../')
 sys.path.append('../code')
 sys.path.append('../data')
 sys.path.append('./solvers/cube3/')
-sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/environments/')
+sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/code/environments/')
 print(sys.path)
 import env_utils
 import socket
 import gc
 # from solver_algs import Kociemba
 # from solver_algs import Optimal
-sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/ml_utils/')
+sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/code/ml_utils/')
 import nnet_utils
 import search_utils
 
@@ -33,7 +33,7 @@ socketName = ''
 
 def dataListener(dataQueue, resQueue, gpuNum=None):
     # Environment = env_utils.getEnvironment('cube3')
-    nnet = nnet_utils.loadNnet(os.path.abspath('..')+'/cube/code/savedModels/cube3/1', 'model.meta"', True, Environment, gpuNum=gpuNum)
+    nnet = nnet_utils.loadNnet(os.path.abspath('..')+'/code/savedModels/cube3/1', 'model.meta"', True, Environment, gpuNum=gpuNum)
     while True:
         data = dataQueue.get()
         nnetResult = nnet(data)
@@ -108,7 +108,7 @@ def solve(state):
     global socketName
     sys.path.append('./')
     sys.path.append('./solvers/cube3/')
-    sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/solvers/cube3/')
+    sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/code/solvers/cube3/')
     useGPU = True
     if len(os.environ['CUDA_VISIBLE_DEVICES']) > 1:
         gpuNums = [int(x) for x in os.environ['CUDA_VISIBLE_DEVICES'].split(",")]
