@@ -5,9 +5,10 @@
 #   https://github.com/davidwhogg/MagicCube
 
 import numpy as np
-#matplotlib.use("TkAgg")
+matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 from matplotlib import widgets
 import sys
 import os
