@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.conf.urls import url
 from .views import *
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     # url(r'^admin/$', admin.site.urls),
     url(r'^$', index),
@@ -26,3 +29,4 @@ urlpatterns = [
     url(r'^indexPlus/$', index_plus),
     url(r'^indexPlus/initState/$', initState),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
