@@ -138,7 +138,8 @@ def solve(request):
     sys.path.append(o_path)
     sys.path.append('../')
     sys.path.append('./code/scripts/')
-    sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/code/scripts/')
+    sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/scripts/')
+    print sys.path
     import nnetSolve
     stateUnicode = request.POST.get('state')
     stateStr = stateUnicode.encode('utf-8')
@@ -180,7 +181,7 @@ def solve_plus(request):
     sys.path.append(o_path)
     sys.path.append('../')
     sys.path.append('./code/scripts/')
-    sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/code/scripts/')
+    sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/scripts/')
     import nnetSolve
     stateUnicode = request.POST.get('state')
     stateStr = stateUnicode.encode('utf-8')

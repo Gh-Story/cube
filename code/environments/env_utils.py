@@ -3,13 +3,19 @@ from random import choice
 import re
 import os
 import sys
+o_path = os.getcwd()
+sys.path.append(o_path)
 sys.path.append('./')
-sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/code/environments/')
+sys.path.append('../')
+sys.path.append('../code')
+sys.path.append('../data')
+sys.path.append('./solvers/cube3/')
+sys.path.append(os.path.abspath(os.path.dirname(os.getcwd())+os.path.sep+".") + '/cube/code/environments/')
 import cube_interactive_simple
 def getEnvironment(envName):
     envName = envName.lower()
     if envName == 'cube3':
-        from environments.cube_interactive_simple import Cube
+        from cube_interactive_simple import Cube
         Environment = Cube(N=3,moveType="qtm")
     elif envName == 'cube3htm':
         from environments.cube_interactive_simple import Cube
