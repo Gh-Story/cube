@@ -27,45 +27,20 @@
 <body>
     <div class="container">
         <center>
-            <h1>Solve the Rubik's Cube Using Deep Learning</h1>
+            <h4>帮我还原手中魔方</h4>
             <div id="program_container" class="container">
-                <div id="solution_container" class="container">
+<!--                 id="transparent"-->
+                <div class="container">
+                    <a style="text-decoration: none;" href="/index">
+                        <button id="ret" type="button">返回</button>
+                    </a>
                     <button disabled id="first_state" type="button">&#060;&#060;</button>
                     <button disabled id="prev_state" type="button">&#060;</button>
                     <button disabled id="next_state" type="button">&#062;</button>
                     <button disabled id="last_state" type="button">&#062;&#062;</button>
                    <br /><br/>
-                    <div id="saveStatesolution_container">
-                        <input class="countTime" type="text" name="" id="fen" value="0" />m
-                        <input class="countTime" type="text" name="" id="miao" value="0" />s
-                         <button  id="saveState" type="button" onclick="addButtonTimeState()">保存状态</button><br /><br/>
-                        <script type="text/javascript">
-                            var a=0;
-                            var b=0;
-                            var t;
-                            //这一块是一个立即函数，我是这样理解的，这一块的立即执行函数我是在菜鸟网站学习setTimeout()方法的时候学到的。
-                            (function count(){
-                                document.getElementById('miao').value=b;
-                                b +=1;
-                                t = setTimeout(function(){
-                                    count();
-                                },1000)
-                                if(b == 60){
-                                    a= a+1;
-                                    document.getElementById('fen').value = a;
-                                    b=0;
-                                }
-                                
-                            })()
-                            
-                        </script>
-                    </div>
-                   <!--  <div id="saveStatesolution_container">
-                        <button  id="saveState" type="button" onclick="addButtonTimeState()">保存状态</button><br /><br/>
-                    </div> -->
-                    <h4 id="solution_text">Solution:</h4>
+                    <h4 id="solution_text" ></h4>
                 </div>
-
                 <div id="cube_div" class="container" style="padding: 60px">
                 <section class="cube_container">
                     <div id="cube">
@@ -86,27 +61,27 @@
             </div>
 
                 <br>
+                <button disabled id="scramble" type="button">打乱</button>
+                <button disabled id="solve" type="button">开始解!</button><br /><br />
 
-                <div id="button_container" class="container">
-                    <button disabled id="U1" type="button" onclick="singleRotation(this.id)">U</button>
-                    <button disabled id="D1" type="button" onclick="singleRotation(this.id)">D</button>
-                    <button disabled id="L1" type="button" onclick="singleRotation(this.id)">L</button>
-                    <button disabled id="R1" type="button" onclick="singleRotation(this.id)">R</button>
-                    <button disabled id="F1" type="button" onclick="singleRotation(this.id)">F</button>
-                    <button disabled id="B1" type="button" onclick="singleRotation(this.id)">B</button>
-                    <button disabled id="U2" type="button" onclick="singleRotation(this.id)">U'</button>
-                    <button disabled id="D2" type="button" onclick="singleRotation(this.id)">D'</button>
-                    <button disabled id="L2" type="button" onclick="singleRotation(this.id)">L'</button>
-                    <button disabled id="R2" type="button" onclick="singleRotation(this.id)">R'</button>
-                    <button disabled id="F2" type="button" onclick="singleRotation(this.id)">F'</button>
-                    <button disabled id="B2" type="button" onclick="singleRotation(this.id)">B'</button>
+                <div id="transparent">
+                    <button style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)" disabled id="U1">U</button>
+                    <button style="background-color: rgb(255, 255, 26); color: rgb(0, 0, 0)" disabled id="D1" type="button">D</button>
+                    <button style="background-color: rgb(255, 128, 0)" disabled id="L1" type="button">L</button>
+                    <button style="background-color: rgb(230, 0, 0)" disabled id="R1" type="button" >R</button>
+                    <button style="background-color: rgb(51, 204, 51)" disabled id="F1" type="button">F</button>
+                    <button style="background-color: rgb(0, 0, 255)" disabled id="B1" type="button">B</button>
+                    <button disabled id="U2" type="button">U'</button>
+                    <button disabled id="D2" type="button">D'</button>
+                    <button disabled id="L2" type="button">L'</button>
+                    <button disabled id="R2" type="button">R'</button>
+                    <button disabled id="F2" type="button">F'</button>
+                    <button disabled id="B2" type="button">B'</button>
 
-                    <button disabled id="scramble" type="button">Scramble</button>
-                    <button disabled id="solve" type="button">Solve!</button><br /><br />
-
+                    <button disabled id="initcube" type="button">InitCube</button><br />
                     input: <input disabled id="input" type="text" style="width:400px">
                     <button disabled id="rotation" type="button" onclick="rotation()">Rotation</button>
-                    <button disabled id="initcube" type="button" onclick="initCube()">InitCube</button><br />
+                    </div>
                 </div>
             </div>
         </center>

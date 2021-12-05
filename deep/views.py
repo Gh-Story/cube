@@ -51,10 +51,19 @@ anglesSet = {24: [2, 20, 44], 25: [0, 26, 47], 34: [8, 35, 38], 35: [6, 29, 53],
 
 
 def index(requests):
-    return render(requests,'index.html')
-
+    print(requests)
+    return render(requests, 'index.html')
+    
+def guidance(requests):
+    print(requests)
+    return render(requests, 'guidance.html')
+    
+def challenge(requests):
+    print(requests)
+    return render(requests, 'challenge.html')
 
 def index_plus(requests):
+    print(requests)
     return render(requests, 'index.plus.html')
 
 

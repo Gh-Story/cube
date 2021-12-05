@@ -17,16 +17,16 @@ from django.contrib import admin
 from django.conf.urls import url
 from .views import *
 
-from django.conf import settings
-from django.conf.urls.static import static
-
 urlpatterns = [
-    # url(r'^admin/$', admin.site.urls),
-    url(r'^$', index),
-    url(r'^initState/$', initState),
-    url(r'^solve/$', solve),
     url(r'^indexPlus/solvePlus/$', solve_plus),
     url(r'^indexPlus/$', index_plus),
     url(r'^indexPlus/initState/$', initState),
+    
+    url(r'^index/$', index),
+    url(r'^index/guidance/$', guidance),
+    url(r'^index/guidance/initState/$', initState),
+    url(r'^index/guidance/solvePlus/$', solve_plus),
+    url(r'^index/challenge/$', challenge),
+    url(r'^index/challenge/initState/$', initState),
+    url(r'^index/challenge/solvePlus/$', solve_plus),
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
