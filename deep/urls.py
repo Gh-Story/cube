@@ -30,3 +30,4 @@ urlpatterns = [
     url(r'^index/challenge/initState/$', initState),
     url(r'^index/challenge/solvePlus/$', solve_plus),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
